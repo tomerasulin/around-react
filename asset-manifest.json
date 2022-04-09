@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/around-react/static/css/main.b1c80075.css",
+    "main.js": "/around-react/static/js/main.760c2139.js",
+    "static/js/787.1c78f32b.chunk.js": "/around-react/static/js/787.1c78f32b.chunk.js",
+    "static/media/Inter-Medium.woff": "/around-react/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Black.woff": "/around-react/static/media/Inter-Black.c6938660eec019fefd68.woff",
+    "static/media/Inter-Regular.woff": "/around-react/static/media/Inter-Regular.8c206db99195777c6769.woff",
+    "static/media/Inter-Medium.woff2": "/around-react/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2": "/around-react/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
+    "static/media/Inter-Regular.woff2": "/around-react/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/HeaderLogo.svg": "/around-react/static/media/HeaderLogo.4e8e0a1d604782a0dff8e5b1a5441e4d.svg",
+    "static/media/LikeLogo.svg": "/around-react/static/media/LikeLogo.3826c074a1b94b101e38.svg",
+    "index.html": "/around-react/index.html",
+    "static/media/Trash.svg": "/around-react/static/media/Trash.c4956c32989e66228de8.svg",
+    "static/media/ActiveLike.svg": "/around-react/static/media/ActiveLike.226461bd64622361ffb2.svg",
+    "static/media/CloseIcon.svg": "/around-react/static/media/CloseIcon.0a2678e11f71ce96ede3.svg",
+    "static/media/EditButton.svg": "/around-react/static/media/EditButton.8667ac4a523e8fc42e59.svg",
+    "static/media/EditPen.svg": "/around-react/static/media/EditPen.a086f758840ae814ecde.svg",
+    "static/media/AddIcon.svg": "/around-react/static/media/AddIcon.d86bb2edc2f6eadb96b7.svg",
+    "main.b1c80075.css.map": "/around-react/static/css/main.b1c80075.css.map",
+    "main.760c2139.js.map": "/around-react/static/js/main.760c2139.js.map",
+    "787.1c78f32b.chunk.js.map": "/around-react/static/js/787.1c78f32b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1c80075.css",
+    "static/js/main.760c2139.js"
+  ]
+}
