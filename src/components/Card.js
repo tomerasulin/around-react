@@ -1,4 +1,4 @@
-export const Card = (props) => {
+const Card = (props) => {
   function handleClick() {
     props.onCardClick(props.card);
   }
@@ -30,3 +30,5 @@ export const Card = (props) => {
     </li>
   );
 };
+
+export default Card;

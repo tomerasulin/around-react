@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import { api } from "../utils/api";
-import { Card } from "./Card";
+import Card from "./Card";
 
-export const Main = (props) => {
+const Main = (props) => {
   const [userName, setUserName] = useState("");
   const [userDescription, setUserDescription] = useState("");
   const [userAvatar, setUserAvatar] = useState("");
@@ -70,3 +70,5 @@ export const Main = (props) => {
     </main>
   );
 };
+
+export default Main;

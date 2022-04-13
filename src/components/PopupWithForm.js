@@ -1,4 +1,4 @@
-export const PopupWithForm = (props) => {
+const PopupWithForm = (props) => {
   return (
     <div
       className={`popup-box popup-box_type_${props.name} ${
@@ -31,3 +31,5 @@ export const PopupWithForm = (props) => {
     </div>
   );
 };
+
+export default PopupWithForm;

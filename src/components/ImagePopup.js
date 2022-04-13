@@ -1,4 +1,4 @@
-export const ImagePopup = (props) => {
+const ImagePopup = (props) => {
   return (
     <div
       className={`popup-box popup-box_type_open ${
@@ -22,3 +22,5 @@ export const ImagePopup = (props) => {
     </div>
   );
 };
+
+export default ImagePopup;
