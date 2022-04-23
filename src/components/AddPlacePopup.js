@@ -1,7 +1,7 @@
 import PopupWithForm from "./PopupWithForm";
 import React from "react";
 
-const AddPlacePopup = (props) => {
+const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
   const [title, setTitle] = React.useState("");
   const [url, setUrl] = React.useState("");
 
@@ -16,7 +16,7 @@ const AddPlacePopup = (props) => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    props.onAddPlace({
+    onAddPlace({
       name: title,
       link: url,
     });
@@ -26,8 +26,8 @@ const AddPlacePopup = (props) => {
     <PopupWithForm
       name="add"
       title="New Place"
-      isOpen={props.isOpen}
-      onClose={props.onClose}
+      isOpen={isOpen}
+      onClose={onClose}
       buttonText="Create"
       onSubmit={handleSubmit}
     >

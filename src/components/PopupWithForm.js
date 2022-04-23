@@ -1,8 +1,16 @@
-const PopupWithForm = (props) => {
+const PopupWithForm = ({
+  name,
+  isOpen,
+  onClose,
+  title,
+  onSubmit,
+  buttonText,
+  children,
+}) => {
   return (
     <div
-      className={`popup-box popup-box_type_${props.name} ${
-        props.isOpen ? "popup-box_opened" : ""
+      className={`popup-box popup-box_type_${name} ${
+        isOpen ? "popup-box_opened" : ""
       }`}
     >
       <div className="popup-box__container">
@@ -10,22 +18,22 @@ const PopupWithForm = (props) => {
           type="button"
           className="popup-box__close-btn"
           aria-label="Close"
-          onClick={props.onClose}
+          onClick={onClose}
         ></button>
         <form
-          className={`popup-box__form popup-box__form_${props.name}`}
+          className={`popup-box__form popup-box__form_${name}`}
           noValidate
-          onSubmit={props.onSubmit}
+          onSubmit={onSubmit}
         >
-          <h3 className="popup-box__title">{props.title}</h3>
-          {props.children}
+          <h3 className="popup-box__title">{title}</h3>
+          {children}
           <button
             type="submit"
             className="popup-box__save-btn"
             aria-label="Save"
             name="save"
           >
-            {props.buttonText}
+            {buttonText}
           </button>
         </form>
       </div>

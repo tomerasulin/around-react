@@ -2,7 +2,7 @@ import PopupWithForm from "./PopupWithForm";
 import React, { useState } from "react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-const EditProfilePopup = (props) => {
+const EditProfilePopup = ({onUpdateUser, isOpen, onClose}) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const currentUser = React.useContext(CurrentUserContext);
@@ -19,7 +19,7 @@ const EditProfilePopup = (props) => {
     // Prevent the browser from navigating to the form address
     e.preventDefault();
     // Pass the values of the managed components to the external handler
-    props.onUpdateUser({
+    onUpdateUser({
       name,
       about: description,
     });
@@ -34,8 +34,8 @@ const EditProfilePopup = (props) => {
     <PopupWithForm
       name="edit"
       title="Edit profile"
-      isOpen={props.isOpen}
-      onClose={props.onClose}
+      isOpen={isOpen}
+      onClose={onClose}
       buttonText="Save"
       onSubmit={handleSubmit}
     >
