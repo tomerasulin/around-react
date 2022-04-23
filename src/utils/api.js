@@ -3,11 +3,6 @@ class Api {
     this._baseUrl = baseUrl;
     this._headers = headers;
   }
-
-  init() {
-    return Promise.all([this.getInitialCards(), this.getUserInfo()]);
-  }
-
   /**
    * this method fetch the user info from the server
    * {
@@ -113,6 +108,10 @@ class Api {
     }).then((res) => this._getResponseData(res));
   }
 
+  changeLikeCardStatus(id, isLiked) {
+    return isLiked ? this.likeCard(id) : this.dislikeCard(id);
+  }
+
   /**
    * this method send a PATCH request to chagne the profile picture
    * @param {*} avatar
@@ -122,7 +121,7 @@ class Api {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       headers: this._headers,
       method: "PATCH",
-      body: JSON.stringify({ avatar: avatar["image-link"] }),
+      body: JSON.stringify(avatar),
     }).then((res) => this._getResponseData(res));
   }
 
