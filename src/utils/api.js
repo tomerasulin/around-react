@@ -134,10 +134,12 @@ class Api {
 }
 
 // creating an Api variable for communicate with the server
-export const api = new Api({
+const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/group-12",
   headers: {
     authorization: "51cb9d12-6e1a-4c88-9721-b40c0e542029",
     "Content-Type": "application/json",
   },
 });
+
+export default api;
