@@ -28,7 +28,7 @@ const EditProfilePopup = ({onUpdateUser, isOpen, onClose}) => {
   React.useEffect(() => {
     setName(currentUser.name);
     setDescription(currentUser.about);
-  }, [currentUser]);
+  }, [currentUser, isOpen]);
 
   return (
     <PopupWithForm
@@ -48,7 +48,7 @@ const EditProfilePopup = ({onUpdateUser, isOpen, onClose}) => {
         required
         minLength="2"
         maxLength="40"
-        value={name}
+        value={name || ""}
         onChange={handleChangeName}
       />
       <span className="name-input-error popup-box__error"></span>
@@ -61,7 +61,7 @@ const EditProfilePopup = ({onUpdateUser, isOpen, onClose}) => {
         required
         minLength="2"
         maxLength="200"
-        value={description}
+        value={description || ""}
         onChange={handleChangeDescription}
       />
       <span className="about-input-error popup-box__error"></span>

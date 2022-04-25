@@ -42,17 +42,23 @@ function App() {
   }
 
   function handleUpdateUser(data) {
-    api.editProfile(data).then((newData) => {
-      setCurrentUser(newData);
-      closeAllPopups();
-    });
+    api
+      .editProfile(data)
+      .then((newData) => {
+        setCurrentUser(newData);
+        closeAllPopups();
+      })
+      .catch(console.log);
   }
 
   function handleUpdateAvatar(avatar) {
-    api.updateProfilePic(avatar).then((newData) => {
-      setCurrentUser(newData);
-      closeAllPopups();
-    });
+    api
+      .updateProfilePic(avatar)
+      .then((newData) => {
+        setCurrentUser(newData);
+        closeAllPopups();
+      })
+      .catch(console.log);
   }
 
   function handleCardLike(card) {
@@ -60,28 +66,37 @@ function App() {
     const isLiked = card.likes.some((user) => user._id === currentUser._id);
 
     // Send a request to the API and getting the updated card data
-    api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
-      setCards((state) =>
-        state.map((currentCard) =>
-          currentCard._id === card._id ? newCard : currentCard
-        )
-      );
-    });
+    api
+      .changeLikeCardStatus(card._id, !isLiked)
+      .then((newCard) => {
+        setCards((state) =>
+          state.map((currentCard) =>
+            currentCard._id === card._id ? newCard : currentCard
+          )
+        );
+      })
+      .catch(console.log);
   }
 
   function handleCardDelete(card) {
-    api.deleteCard(card._id).then(() => {
-      setCards((state) =>
-        state.filter((currentCard) => currentCard._id !== card._id)
-      );
-    });
+    api
+      .deleteCard(card._id)
+      .then(() => {
+        setCards((state) =>
+          state.filter((currentCard) => currentCard._id !== card._id)
+        );
+      })
+      .catch(console.log);
   }
 
-  function handleAddPlaceSubmit(card){
-    api.addCard(card).then((newCard) => {
-      setCards([newCard, ...cards]);
-      closeAllPopups();
-    })
+  function handleAddPlaceSubmit(card) {
+    api
+      .addCard(card)
+      .then((newCard) => {
+        setCards([newCard, ...cards]);
+        closeAllPopups();
+      })
+      .catch(console.log);
   }
 
   function closeAllPopups() {
@@ -108,6 +123,20 @@ function App() {
         setCards(cardData);
       })
       .catch(console.log);
+  }, []);
+
+  useEffect(() => {
+    //defining a function that handle the ESC button
+    const closeByEscape = (e) => {
+      if (e.key === "Escape") {
+        closeAllPopups();
+      }
+    };
+
+    document.addEventListener("keydown", closeByEscape);
+
+    //a clean up function to remove the listener whenever the component unmounts
+    return () => document.removeEventListener("keydown", closeByEscape);
   }, []);
 
   return (

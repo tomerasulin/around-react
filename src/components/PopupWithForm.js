@@ -22,7 +22,6 @@ const PopupWithForm = ({
         ></button>
         <form
           className={`popup-box__form popup-box__form_${name}`}
-          noValidate
           onSubmit={onSubmit}
         >
           <h3 className="popup-box__title">{title}</h3>

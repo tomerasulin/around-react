@@ -22,6 +22,11 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace }) => {
     });
   }
 
+  React.useEffect(() => {
+    setTitle("");
+    setUrl("");
+  }, [isOpen]);
+
   return (
     <PopupWithForm
       name="add"
